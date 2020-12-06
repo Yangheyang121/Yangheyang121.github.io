@@ -18,4 +18,39 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>从完全不懂github到搭建个人博客的艰辛历程</title>
+    <url>/2020/12/06/%E4%BB%8E%E5%AE%8C%E5%85%A8%E4%B8%8D%E6%87%82github%E5%88%B0%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%89%B0%E8%BE%9B%E5%8E%86%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p>从完全不懂github到搭建个人博客，我前前后后总共用了3天时间，百度了很多教程，发现搭建方法多种多样，跟着教程做总会出现问题，最后我选择了githubpages+hexo搭建博客，主要是跟着这一篇<a href="https://blog.csdn.net/qq_36759224/article/details/82121420?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160713677519721942222262%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=160713677519721942222262&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-82121420.pc_search_result_cache&utm_term=githubpage%20hexo&spm=1018.2118.3001.4449">小白教程</a>搭建的，这一篇讲地比较好的是每一步都告诉你应该在哪个文件夹下git bash，这个是最容易出错的地方。</p>
+<p>这篇小白教程虽然比较详细，但还是有让我出错的地方：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1ZTA5MzBjMi5wbmc" alt="enter description here"><br>这里面的第3步不要做，我做了第3步之后发现我每个步骤与结果都正确，但就是your username.github.io网址上出不来hexo设置好的静态网页，最后我把原来的githubpage删了重新又建了一个，不做第3步又重新配置了一下才搭建好博客。</p>
+<h1 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h1><p>搭建好之后就是选主题了，我选的是next，这个界面比较简洁。具体配置教程CSDN上也有很多，照着做就完事了。<br>可参考<a href="https://blog.csdn.net/steptoboss/article/details/108158067?utm_medium=distribute.pc_relevant.none-task-blog-utm_term-2&spm=1001.2101.3001.4242">NexT主题+个性化配置</a>。</p>
+<h1 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h1><p>搭建博客的最终目的是记录自己的学习笔记，而github pages+hexo最方便的就是发布文章。</p>
+<h2 id="创建新的Markdown文本"><a href="#创建新的Markdown文本" class="headerlink" title="创建新的Markdown文本"></a>创建新的Markdown文本</h2><p>在Hexo的根目录下git bash</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 文章标题</span><br></pre></td></tr></table></figure>
+<p>也可以直接在 \Hexo\source_posts 目录下右键鼠标新建文本文档，改后缀为 .md 即可，这种方法比较方便</p>
+<h2 id="用编辑器写文章"><a href="#用编辑器写文章" class="headerlink" title="用编辑器写文章"></a>用编辑器写文章</h2><p>文章格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">layout: 页面布局（配合主题文档使用）</span><br><span class="line">title: 文章名称</span><br><span class="line">date: 文章日期</span><br><span class="line">comments: 文章是否开启评论</span><br><span class="line">photos: 文章封面图（仅部分主题支持）</span><br><span class="line">tags: </span><br><span class="line">  - 文章标签一</span><br><span class="line">  - 文章标签二</span><br><span class="line">categories: 文章分类</span><br><span class="line">description: 文章描述，即要在首页显示的摘要（仅部分主题支持）</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里是摘要</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">这里是正文</span><br><span class="line"></span><br><span class="line">注意：description 和 &lt;!-- more --&gt; 方式显示摘要二选一即可，部分主题不支持description，每个配置英文冒号后面要空一格，不同主题配置有所差异，具体要参考主题文档</span><br></pre></td></tr></table></figure>
+<p>Markdown语法可参考：</p>
+<ul>
+<li><a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a></li>
+<li><a href="https://blog.csdn.net/afei__/article/details/80717153?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160722497319726885890648%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=160722497319726885890648&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-7-80717153.pc_search_result_cache&utm_term=markdown%E8%AF%AD%E6%B3%95&spm=1018.2118.3001.4449">Markdown语法介绍</a></li>
+<li>需要什么功能直接用<a href="https://www.csdn.net/?spm=1010.2135.3001.4476">CSDN</a>搜索即可</li>
+</ul>
+<p>最后用Markdown编辑器（我用的是小书匠，挺好用的）写好文章好直接保存即可。</p>
+<h2 id="将文章推送到服务器上"><a href="#将文章推送到服务器上" class="headerlink" title="将文章推送到服务器上"></a>将文章推送到服务器上</h2><p>可先在本地<a href="http://localhost:4000/">http://localhost:4000/</a>查看效果，在Hexo根目录下git bash运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hero s</span><br></pre></td></tr></table></figure>
+<p>如果本地查看无误后运行以下命令上传至your username.github.io：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+<p>现在访问博客就可以看见自己写好的文章喽！</p>
+]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github pages</tag>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
 </search>

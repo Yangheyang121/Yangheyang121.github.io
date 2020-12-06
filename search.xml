@@ -41,7 +41,6 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hero s</span><br></pre></td></tr></table></figure>
 <p>如果本地查看无误后运行以下命令上传至your username.github.io：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <p>现在访问博客就可以看见自己写好的文章喽！</p>
 ]]></content>

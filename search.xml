@@ -1,178 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>python入门</title>
-      <link href="2021/01/30/python%E5%85%A5%E9%97%A8/"/>
-      <url>2021/01/30/python%E5%85%A5%E9%97%A8/</url>
-      
-        <content type="html"><![CDATA[<h1 id="print"><a href="#print" class="headerlink" title="print"></a>print</h1><p>将数据输出到文件中，a+的意思是如果文件不存在就创建，存在就在文件内容的后面继续追加</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fp &#x3D; open(&#39;D:&#x2F;text.txt&#39;,&#39;a+&#39;)</span><br><span class="line">print(&#39;helloworld&#39;,file&#x3D;fp)</span><br><span class="line">fp.close()</span><br></pre></td></tr></table></figure><p>还可以输出数字、字符串、含有运算符的表达式（会输出结果）</p><p>在print()函数中，不只是字符串才需要引号，数字也可以，不过一旦数字加上引号，这个数字也被当做是字符串在打印。</p><p>print()函数内的引号可以有多种形态，可以是单引号，双引号，还可以是三引号。</p><p>单引号，双引号都能让你打印出一行文本，有时两者还会同时出现。比如print(“Don’t worry”)。</p><p>print(“Don’t worry”)这里外面一定要用双引号，不能用单引号，因为里面也有个单引号，一定要区分开，不然代码会报错。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(5+5)</span><br><span class="line">print(&#39;5+5&#39;)</span><br></pre></td></tr></table></figure><p>这时就要请出一个神奇的引号，三引号’’’（连续输入三个单引号），有它在print内部就可以来实现自动换行，是不是很犀利。<br>直接上代码检验是否可行，运行右侧这段代码，看这次能不能实现至尊宝的台词自动换行。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">print(&#39;&#39;&#39;曾经有一份真诚的爱情摆在我的面前，</span><br><span class="line">但是我没有珍惜，等到了失去的时候才后悔莫及，</span><br><span class="line">尘世间最痛苦的事莫过于此。</span><br><span class="line">如果可以给我一个机会再来一次的话，</span><br><span class="line">我会跟那个女孩子说我爱她，</span><br><span class="line">如果非要把这份爱加上一个期限，</span><br><span class="line">我希望是一万年！</span><br><span class="line">&#39;&#39;&#39;)</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&#39;曾经有一份真诚的爱情摆在我的面前，\n但是我没有珍惜，等到了失去的时候才后悔莫及，\n尘世间最痛苦的事莫过于此。\n如果可以给我一个机会再来一次的话，\n我会跟那个女孩子说我爱她，\n如果非要把这份爱加上一个期限，\n我希望是一</span><br><span class="line"></span><br><span class="line">![绘图](.&#x2F;attachments&#x2F;1628598926295.drawio.html)</span><br><span class="line"></span><br><span class="line">万年！&#39;)</span><br></pre></td></tr></table></figure><p>其他转义字符有：\r（回车）、\b（退格）</p><p><a href="https://resource.oss.yatiku.com/plan/share/1579244812537.png">https://resource.oss.yatiku.com/plan/share/1579244812537.png</a></p><h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>小白的华丽转身，掌握计算机沟通的语言，清楚计算机语言的数据类型以及它们之间是如何转换运行的。<br>如何理解计算机的语言是什么，还是要回到计算机的本质。<br>计算机的本质就是一个可以做复杂计算的机器，它的主要任务就是处理各种数据，并实现数据间的转换，而这些数据的类型，就是计算机的语言类型。<br>在Python的基础语法中，最常用的数据类型有三种——字符串(str)、整数(int)和浮点数(float) 。</p><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串英文string，简写str。字符串最明显的识别方式就是它的外面要有【引号】，这是字符串最明显的特征。<br>引号就是字符串数据的身份，只要是被单/双/三引号包括起来的内容，不论这个内容是中文、英文还是数字都表示是字符串类型。<br>关于字符串，大家一定要记得：字符串类型必须有引号的辅助。不然代码就会报错，引号就是外衣，没有外衣就是在裸奔（辣眼睛，不敢看）</p><h2 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h2><p>整数再熟悉不过了，小学阶段就知道了，整数包括正整数、负整数和零，英文为integer，简写做int<br>注意好运算优先级就好</p><h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>可以简单理解为带小数点的数字，就是浮点数。编程语言是十分严谨的，整数运算和浮点运算是不同的<br>浮点数的英文名是float，在print()函数中打印浮点型数据，要这样写代码print(float（2）)。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(0.02+0.39)</span><br><span class="line">#结果为0.41的写法，后面课程中有介绍</span><br><span class="line">#print(&#39;%.2f&#39;%(0.39+0.02))</span><br></pre></td></tr></table></figure><p>诡异的事情发生了，终端区结果多出好多0，在末尾还有一个3，为什么不是0.41，而是 0.4100…..003。（眼都数花了）</p><p>0.02和0.39都是十进制，这就涉及到一个十进制和二进制运算转换的问题，Python在进行浮点数运算时，会先把0.02和0.39转化成二进制数才能计算，这里就不再展开了。【注：二进制数由0和1表示，逢二进一】</p><h2 id="type-函数"><a href="#type-函数" class="headerlink" title="type()函数"></a>type()函数</h2><p>type()函数<br>type()函数使用也很简单：只需把查询的内容放在括号里，然后通过print()函数打印出来就行了，代码是这样的print(type(放入需要查询的数据或变量))。</p><h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><h2 id="str-函数"><a href="#str-函数" class="headerlink" title="str()函数"></a>str()函数</h2><p>不论数据是中文、数字、标点，str()函数都能将数据转换成其字符串类型，也可以理解成在str()函数的帮助下，数据就会被加上引号变成字符串。</p><h2 id="int-函数"><a href="#int-函数" class="headerlink" title="int()函数"></a>int()函数</h2><p>int()函数使用方法同str()一样，请补全右侧代码，计算出num1和num2这两个变量的和。【要点提示：1. int()函数转换数据类型；2. 运算符+计算；3. print()函数】</p><p>int()函数不能把中文、浮点数类型的字符串或者标点符号转换成整数，字符串内容是整数的数据，才能被int()强制转换，其他类型都会报错</p><p>报错为</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">print(int(&#39;5.2&#39;))</span><br><span class="line"></span><br><span class="line">#运行后显示结果：ValueError：invalid literal for int() with base 10: &#39;5.2&#39;</span><br><span class="line"></span><br><span class="line">#【ValueError：invalid literal for int() with base 10: &#39;5.2&#39;&#96;】</span><br><span class="line">#（值异常：浮点类型字符串无法使用int()强制转换）。</span><br><span class="line"></span><br><span class="line">print(int(5.2))</span><br><span class="line">#输出为5</span><br></pre></td></tr></table></figure><h2 id="float-函数"><a href="#float-函数" class="headerlink" title="float()函数"></a>float()函数</h2><p>跟str()和int()函数应用一样，float()函数也是将需要转换的数据放在括号里。</p><h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><p><img src="./images/3_if%E8%AF%AD%E5%8F%A5%E5%8D%95%E5%90%91%E5%88%A4%E6%96%AD%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91.png" alt="3_if语句单向判断代码逻辑"><br>划重点了：你注意到在条件判断代码中的冒号后，下一行内容的前面，会空几个格，空格的学名叫缩进，在这里空4个空格。<br><img src="./images/3_if%E8%AF%AD%E5%8F%A5%E8%8C%83%E4%BE%8B.png" alt="3_if语句范例"><br>注意：代码的缩进为一个tab键，或者四个空格(tab键和空格不要混用)，格式不对代码就会报错。<br>在if条件语言中，缩进不需要我们手动按空格键。当你用英文输入法打:后按回车，会自动实现下一行代码，向右缩进的功能。<br>冒号是条件判断语句的一个特点，一定不要忘记，Python代码缩进主要是用来明确条件执行的逻辑及先后层级的。<br>if就像是一个小组长，冒号后的内容都是他的成员，当组长if提出一个条件指令时，他下面的成员就要严格照办。<br>直接运行右侧代码。（请不要更改代码，当终端出现红色报错提醒后，点击跳过本题）</p><p>缩进错误：IndentationError: expected an indented block    出现了组织混乱时，if条件和print命令应该是上下级关系，现在成了平行关系。条件和结果失去了内在关系，条件被架空了，自然会报错。</p><p>在双向判断语句里，if…else…是同一层级的，它们都是顶格的，没有缩进，而两个print()是它们的下级。<br>如果else前出现空格，就会出现报错提示【SyntaxError: invalid syntax】（语法错误：无效语法）。<br>正确语法下if和else运行的原理：if和else相当于是两个组长，各自带队，他们的级别是一样的。<br>如果这件事满足if条件就让if去完成，如果不满足就执行else其他条件，互不干扰，分工明确。</p><p>多向判断命令：if…elif…else…用于判断条件达到3个或3个以上。<br>多向判断的命令逻辑：如果if的条件不满足，就按顺序看是否满足elif的条件，如果不满足elif的条件，就执行else的命令。<br>第一行代码为变量赋值，后面的条件会逐个判断一遍，直到满足条件为止。<br>**==elif语句一定要跟在if之后 #E91E63==**，虽然它们之间是平级的，但有个先来后到。elif已经带有其他条件的意思，所以elif后也可以不接else，代码也是完整的。</p><h1 id="input"><a href="#input" class="headerlink" title="input"></a>input</h1><p>从print()函数的信息打印，到input()函数的信息输入，我们就可以实现一个人机互动的小程序了，开始吧。</p><p>input()也可输出信息，只不过这个信息一定要输入才有回应，它是一个等待回应的信息。</p><p>当我们在终端输入选择时，下一步的程序就激活了，可以接着往下运行，input()函数就像一个加油站，加满油（输入信息）就可以接着往下跑了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input(&#39;请输入同班同学的名字：&#39;)</span><br></pre></td></tr></table></figure><p>input()函数输入的是一个等待回复的信息，虽然这个信息也会被输出，但是跟print()函数不同，’请输入同班同学的名字：’它在等待一个答案。</p><p>input()函数会将括号内的信息完全输出，同时在终端区域它还等待你的回答，一般会有个光标在句尾忽隐忽现，就是在等待你的回复。</p><p>如果我们一直不输入信息，它就一直停留在这里，苦苦等待，也不会再有任何反馈。</p><p>input()函数就是代码征途上的加油站，在这里必须要停留，而且要加油（回复信息），代码才能一步步往下跑，如果停留在这里不加油，代码运行就会卡在这里。</p><p>一旦我们输入信息（加油），计算机就收到了回应，带你走向下一段代码。</p><p>input()函数在我们时常接触的网络中随处可见，搜索、输入账号密码、发帖，可以说有输入框就有input()函数的身影，知道它有多重要了吧。</p><p> ====<strong>input()函数是用来收集信息的，并且一定要在终端处输入数据。它是需要被赋值的，input函数输入的值必定为字符串。</strong> #E91E63====</p><h2 id="input-函数结果如何赋值"><a href="#input-函数结果如何赋值" class="headerlink" title="input()函数结果如何赋值"></a>input()函数结果如何赋值</h2><p> 把input()函数收集到的信息保存到一个变量中，这个变量就保存了信息，以后直接打印变量名，就可以得到结果。<br>以下面代码为例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lover &#x3D; input(&#39;请柯南输入喜欢女生的名字：&#39;)</span><br><span class="line"># 运用input()函数收集信息</span><br></pre></td></tr></table></figure><p>当我们输入——小兰，lover = ‘小兰’，我们就完成了从输入到赋值的过程。</p><p><strong>==划重点，input()函数输入的信息永远是以字符串的数据形式保存着，也就是说，即使输入的是1整数，但保存下来是’1’这个字符串，要切记。 #F44336==</strong></p><h1 id="报错提示"><a href="#报错提示" class="headerlink" title="报错提示"></a>报错提示</h1><p>【syntaxError:invalid syntax】（语法错误：无效语法）</p><p>一旦出现这种错误提示，你首先就该反思的是：标点符号用对了吗？是英文输入法吗？然后再去检查语法错误。有时找了半天，其实就是一个符号没用英文。</p><p>SyntaxError: unexpected EOF while parsing<br>#语法错误，多了无法解析的符号，检查一下是否多了或者少了括号</p><p>SyntaxError: invalid character in identifier<br>#语法错误有无效标识符，检查一下中文符号</p><p>IndexError: list index out of range<br>#索引错误，超出索引范围，检查一下列表是否为空</p><p>TypeError: must be str, not int<br>#数据类型错误，该数据不是正确的数据类型，比如字符串和数字直接拼接，检查一下数据类型</p><p>IndentationError: expected an indented block<br>#缩进错误，检查一下代码的缩进是否正确</p><p>KeyError:  ‘fond’<br>#键错误，字典中没有该的key对应的值，检查一下键名或者字典数据是否正确</p><p>ValueError: substring not found<br>#值错误，输入的数据类型跟要求的不符合</p><p>NameError: name ‘a’ is not defined<br>#未初始化对象，变量没有被定义</p><p>AttributeError: ‘tuple’ object has no attribute ‘remove’<br>#属性错误，该对象没有这个属性、方法，检查一下数据类型</p><p>SystemExit<br>#解释器请求退出，出现在exit()函数后</p><p>IOError<br>#输入/输出操作失败</p><p>ImportError<br>#导入模块/对象失败，检查一下模块是否能够正常使用</p><p>UnicodeDecodeError/UnicodeEncodeError/UnicodeTranslateError<br>#Unicode 解码/编码/转换/时的错误</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>Deform_v11</title>
+    <url>/2020/12/07/Deform-v11/</url>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>本人的Deform 一部分装到了E盘deform文件夹里，一部分（Lincense Manager）装到了C盘Program Files中的SFTC文件夹里。</p>
+<h2 id="前处理"><a href="#前处理" class="headerlink" title="前处理"></a>前处理</h2><p>步骤有：</p>
+<ol>
+<li>选择前处理模块并进入</li>
+<li>导入模型并划分网格<ul>
+<li>general（一般）： 选择工件类型｛rigid（刚体）、plastic（塑性体）、elastic（弹性体）、porous（多孔体）｝，工作温度，导入材料模型</li>
+<li>geometry（几何）：导入几何（即三维图或者二维图）</li>
+<li>Mesh（网格）：局部网格划分：Detailed Settings - Weighting Factors -  Mesh Window</li>
+<li>Movement（动作）：设置模具运动速度</li>
+<li>Bdry.Cnd.（边界条件）：设置工件约束</li>
+<li>Properties（性质）</li>
+<li>Advenced（进阶）</li>
+</ul>
+</li>
+<li>模拟控制（Simulation Controls）<ul>
+<li>Main：若有热量传递应给Heat transfer打上对勾</li>
+<li>Simulation Steps：设置模拟步数，以及每隔多少步保存一次</li>
+<li>Step Increment：增量步设置</li>
+<li>Stop：设置步数停止条件，如设置模具的运动位移</li>
+<li>Remesh Criteria：重新划分网格标准（在第2点网格划分那里也可以设置）</li>
+<li>Iteration：迭代</li>
+<li>Process Conditions：设置工艺参数</li>
+<li>Advanced：进阶</li>
+</ul>
+</li>
+<li>设置材料参数</li>
+<li>设置工件相对位置，这一步也可以放在导入模型后直接设置</li>
+<li>设置物体间接触<ul>
+<li>设置物体间摩擦系数</li>
+<li>设置物体间传热系数</li>
+</ul>
+</li>
+<li>生成将要执行模拟的DB文件，生成之前可以检查（check）一下</li>
+<li>保存模拟</li>
+</ol>
+<p>参考资料：</p>
+<ul>
+<li><a href="https://wenku.baidu.com/view/85dc1fc00b4e767f5bcfce62.html">Deform使用简明步骤</a></li>
+<li><a href="https://wenku.baidu.com/view/f4085fe3b9f3f90f76c61b3b.html">Deform-3D网格局部细划分方法</a><h2 id="后处理"><a href="#后处理" class="headerlink" title="后处理"></a>后处理</h2>将背景改为白色：右键就可以改<br>标题：步数</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> 编程 </category>
-          
+        <category>数值模拟</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Deform_v11</title>
-      <link href="2020/12/07/Deform-v11/"/>
-      <url>2020/12/07/Deform-v11/</url>
-      
-        <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>本人的Deform 一部分装到了E盘deform文件夹里，一部分（Lincense Manager）装到了C盘Program Files中的SFTC文件夹里。</p><h2 id="前处理"><a href="#前处理" class="headerlink" title="前处理"></a>前处理</h2><p>步骤有：</p><ol><li>选择前处理模块并进入</li><li>导入模型并划分网格<ul><li>general（一般）： 选择工件类型｛rigid（刚体）、plastic（塑性体）、elastic（弹性体）、porous（多孔体）｝，工作温度，导入材料模型</li><li>geometry（几何）：导入几何（即三维图或者二维图）</li><li>Mesh（网格）：局部网格划分：Detailed Settings - Weighting Factors -  Mesh Window</li><li>Movement（动作）：设置模具运动速度</li><li>Bdry.Cnd.（边界条件）：设置工件约束</li><li>Properties（性质）</li><li>Advenced（进阶）</li></ul></li><li>模拟控制（Simulation Controls）<ul><li>Main：若有热量传递应给Heat transfer打上对勾</li><li>Simulation Steps：设置模拟步数，以及每隔多少步保存一次</li><li>Step Increment：增量步设置</li><li>Stop：设置步数停止条件，如设置模具的运动位移</li><li>Remesh Criteria：重新划分网格标准（在第2点网格划分那里也可以设置）</li><li>Iteration：迭代</li><li>Process Conditions：设置工艺参数</li><li>Advanced：进阶</li></ul></li><li>设置材料参数</li><li>设置工件相对位置，这一步也可以放在导入模型后直接设置</li><li>设置物体间接触<ul><li>设置物体间摩擦系数</li><li>设置物体间传热系数</li></ul></li><li>生成将要执行模拟的DB文件，生成之前可以检查（check）一下</li><li>保存模拟</li></ol><p>参考资料：</p><ul><li><a href="https://wenku.baidu.com/view/85dc1fc00b4e767f5bcfce62.html">Deform使用简明步骤</a></li><li><a href="https://wenku.baidu.com/view/f4085fe3b9f3f90f76c61b3b.html">Deform-3D网格局部细划分方法</a><h2 id="后处理"><a href="#后处理" class="headerlink" title="后处理"></a>后处理</h2>将背景改为白色：右键就可以改<br>标题：步数</li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>Deform</tag>
+        <tag>有限元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/12/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>从完全不懂github到搭建个人博客的艰辛历程</title>
+    <url>/2020/12/06/%E4%BB%8E%E5%AE%8C%E5%85%A8%E4%B8%8D%E6%87%82github%E5%88%B0%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%89%B0%E8%BE%9B%E5%8E%86%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p>从完全不懂github到搭建个人博客，我前前后后总共用了3天时间，百度了很多教程，发现搭建方法多种多样，跟着教程做总会出现问题，最后我选择了githubpages+hexo搭建博客，主要是跟着这一篇<a href="https://blog.csdn.net/qq_36759224/article/details/82121420?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160713677519721942222262%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=160713677519721942222262&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-82121420.pc_search_result_cache&utm_term=githubpage%20hexo&spm=1018.2118.3001.4449">小白教程</a>搭建的，这一篇讲地比较好的是每一步都告诉你应该在哪个文件夹下git bash，这个是最容易出错的地方。</p>
+<p>这篇小白教程虽然比较详细，但还是有让我出错的地方：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1ZTA5MzBjMi5wbmc" alt="enter description here"><br>这里面的第3步不要做，我做了第3步之后发现我每个步骤与结果都正确，但就是your username.github.io网址上出不来hexo设置好的静态网页，最后我把原来的githubpage删了重新又建了一个，不做第3步又重新配置了一下才搭建好博客。</p>
+<h1 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h1><p>搭建好之后就是选主题了，我选的是next，这个界面比较简洁。具体配置教程CSDN上也有很多，照着做就完事了。<br>可参考<a href="https://blog.csdn.net/steptoboss/article/details/108158067?utm_medium=distribute.pc_relevant.none-task-blog-utm_term-2&spm=1001.2101.3001.4242">NexT主题+个性化配置</a>。</p>
+<h1 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h1><p>搭建博客的最终目的是记录自己的学习笔记，而github pages+hexo最方便的就是发布文章。</p>
+<h2 id="创建新的Markdown文本"><a href="#创建新的Markdown文本" class="headerlink" title="创建新的Markdown文本"></a>创建新的Markdown文本</h2><p>在Hexo的根目录下git bash</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 文章标题</span><br></pre></td></tr></table></figure>
+<p>也可以直接在 \Hexo\source_posts 目录下右键鼠标新建文本文档，改后缀为 .md 即可，这种方法比较方便</p>
+<h2 id="用编辑器写文章"><a href="#用编辑器写文章" class="headerlink" title="用编辑器写文章"></a>用编辑器写文章</h2><p>文章格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">layout: 页面布局（配合主题文档使用）</span><br><span class="line">title: 文章名称</span><br><span class="line">date: 文章日期</span><br><span class="line">comments: 文章是否开启评论</span><br><span class="line">photos: 文章封面图（仅部分主题支持）</span><br><span class="line">tags: </span><br><span class="line">  - 文章标签一</span><br><span class="line">  - 文章标签二</span><br><span class="line">categories: 文章分类</span><br><span class="line">description: 文章描述，即要在首页显示的摘要（仅部分主题支持）</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里是摘要</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">这里是正文</span><br><span class="line"></span><br><span class="line">注意：description 和 &lt;!-- more --&gt; 方式显示摘要二选一即可，部分主题不支持description，每个配置英文冒号后面要空一格，不同主题配置有所差异，具体要参考主题文档</span><br></pre></td></tr></table></figure>
+<p>Markdown语法可参考：</p>
+<ul>
+<li><a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a></li>
+<li><a href="https://blog.csdn.net/afei__/article/details/80717153?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160722497319726885890648%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=160722497319726885890648&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-7-80717153.pc_search_result_cache&utm_term=markdown%E8%AF%AD%E6%B3%95&spm=1018.2118.3001.4449">Markdown语法介绍</a></li>
+<li>需要什么功能直接用<a href="https://www.csdn.net/?spm=1010.2135.3001.4476">CSDN</a>搜索即可</li>
+</ul>
+<p>最后用Markdown编辑器（我用的是小书匠，挺好用的）写好文章好直接保存即可。</p>
+<h2 id="将文章推送到服务器上"><a href="#将文章推送到服务器上" class="headerlink" title="将文章推送到服务器上"></a>将文章推送到服务器上</h2><p>可先在本地<a href="http://localhost:4000/">http://localhost:4000/</a>查看效果，在Hexo根目录下git bash运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>如果本地查看无误后运行以下命令上传至your username.github.io：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>现在访问博客就可以看见自己写好的文章喽！</p>
+]]></content>
       <categories>
-          
-          <category> 数值模拟 </category>
-          
+        <category>github</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Deform </tag>
-            
-            <tag> 有限元 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>EndNote X9</title>
-      <link href="2020/12/07/EndNote/"/>
-      <url>2020/12/07/EndNote/</url>
-      
-        <content type="html"><![CDATA[<h2 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h2><ol><li>将文献用自己设置的PDF阅读器打开：Ctrl+Alt+P</li><li>找到文献所在文件夹：F:\ASUS\Words\My EndNote Library.Data\PDF</li></ol>]]></content>
-      
-      
+      <tags>
+        <tag>github pages</tag>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python入门</title>
+    <url>/2021/01/30/python%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1 id="print"><a href="#print" class="headerlink" title="print"></a>print</h1><p>将数据输出到文件中，a+的意思是如果文件不存在就创建，存在就在文件内容的后面继续追加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fp &#x3D; open(&#39;D:&#x2F;text.txt&#39;,&#39;a+&#39;)</span><br><span class="line">print(&#39;helloworld&#39;,file&#x3D;fp)</span><br><span class="line">fp.close()</span><br></pre></td></tr></table></figure>
+<p>还可以输出数字、字符串、含有运算符的表达式（会输出结果）</p>
+<p>在print()函数中，不只是字符串才需要引号，数字也可以，不过一旦数字加上引号，这个数字也被当做是字符串在打印。</p>
+<p>print()函数内的引号可以有多种形态，可以是单引号，双引号，还可以是三引号。</p>
+<p>单引号，双引号都能让你打印出一行文本，有时两者还会同时出现。比如print(“Don’t worry”)。</p>
+<p>print(“Don’t worry”)这里外面一定要用双引号，不能用单引号，因为里面也有个单引号，一定要区分开，不然代码会报错。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(5+5)</span><br><span class="line">print(&#39;5+5&#39;)</span><br></pre></td></tr></table></figure>
+<p>这时就要请出一个神奇的引号，三引号’’’（连续输入三个单引号），有它在print内部就可以来实现自动换行，是不是很犀利。<br>直接上代码检验是否可行，运行右侧这段代码，看这次能不能实现至尊宝的台词自动换行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;&#39;&#39;曾经有一份真诚的爱情摆在我的面前，</span><br><span class="line">但是我没有珍惜，等到了失去的时候才后悔莫及，</span><br><span class="line">尘世间最痛苦的事莫过于此。</span><br><span class="line">如果可以给我一个机会再来一次的话，</span><br><span class="line">我会跟那个女孩子说我爱她，</span><br><span class="line">如果非要把这份爱加上一个期限，</span><br><span class="line">我希望是一万年！</span><br><span class="line">&#39;&#39;&#39;)</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&#39;曾经有一份真诚的爱情摆在我的面前，\n但是我没有珍惜，等到了失去的时候才后悔莫及，\n尘世间最痛苦的事莫过于此。\n如果可以给我一个机会再来一次的话，\n我会跟那个女孩子说我爱她，\n如果非要把这份爱加上一个期限，\n我希望是一</span><br><span class="line"></span><br><span class="line">![绘图](.&#x2F;attachments&#x2F;1628598926295.drawio.html)</span><br><span class="line"></span><br><span class="line">万年！&#39;)</span><br></pre></td></tr></table></figure>
+<p>其他转义字符有：\r（回车）、\b（退格）<br><img src="./images/1_%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6_1.png"></p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>小白的华丽转身，掌握计算机沟通的语言，清楚计算机语言的数据类型以及它们之间是如何转换运行的。<br>如何理解计算机的语言是什么，还是要回到计算机的本质。<br>计算机的本质就是一个可以做复杂计算的机器，它的主要任务就是处理各种数据，并实现数据间的转换，而这些数据的类型，就是计算机的语言类型。<br>在Python的基础语法中，最常用的数据类型有三种——字符串(str)、整数(int)和浮点数(float) 。</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串英文string，简写str。字符串最明显的识别方式就是它的外面要有【引号】，这是字符串最明显的特征。<br>引号就是字符串数据的身份，只要是被单/双/三引号包括起来的内容，不论这个内容是中文、英文还是数字都表示是字符串类型。<br>关于字符串，大家一定要记得：字符串类型必须有引号的辅助。不然代码就会报错，引号就是外衣，没有外衣就是在裸奔（辣眼睛，不敢看）</p>
+<h2 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h2><p>整数再熟悉不过了，小学阶段就知道了，整数包括正整数、负整数和零，英文为integer，简写做int<br>注意好运算优先级就好</p>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>可以简单理解为带小数点的数字，就是浮点数。编程语言是十分严谨的，整数运算和浮点运算是不同的<br>浮点数的英文名是float，在print()函数中打印浮点型数据，要这样写代码print(float（2）)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(0.02+0.39)</span><br><span class="line">#结果为0.41的写法，后面课程中有介绍</span><br><span class="line">#print(&#39;%.2f&#39;%(0.39+0.02))</span><br></pre></td></tr></table></figure>
+<p>诡异的事情发生了，终端区结果多出好多0，在末尾还有一个3，为什么不是0.41，而是 0.4100…..003。（眼都数花了）</p>
+<p>0.02和0.39都是十进制，这就涉及到一个十进制和二进制运算转换的问题，Python在进行浮点数运算时，会先把0.02和0.39转化成二进制数才能计算，这里就不再展开了。【注：二进制数由0和1表示，逢二进一】</p>
+<h2 id="type-函数"><a href="#type-函数" class="headerlink" title="type()函数"></a>type()函数</h2><p>type()函数<br>type()函数使用也很简单：只需把查询的内容放在括号里，然后通过print()函数打印出来就行了，代码是这样的print(type(放入需要查询的数据或变量))。</p>
+<h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><h2 id="str-函数"><a href="#str-函数" class="headerlink" title="str()函数"></a>str()函数</h2><p>不论数据是中文、数字、标点，str()函数都能将数据转换成其字符串类型，也可以理解成在str()函数的帮助下，数据就会被加上引号变成字符串。</p>
+<h2 id="int-函数"><a href="#int-函数" class="headerlink" title="int()函数"></a>int()函数</h2><p>int()函数使用方法同str()一样，请补全右侧代码，计算出num1和num2这两个变量的和。【要点提示：1. int()函数转换数据类型；2. 运算符+计算；3. print()函数】</p>
+<p>int()函数不能把中文、浮点数类型的字符串或者标点符号转换成整数，字符串内容是整数的数据，才能被int()强制转换，其他类型都会报错</p>
+<p>报错为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(int(&#39;5.2&#39;))</span><br><span class="line"></span><br><span class="line">#运行后显示结果：ValueError：invalid literal for int() with base 10: &#39;5.2&#39;</span><br><span class="line"></span><br><span class="line">#【ValueError：invalid literal for int() with base 10: &#39;5.2&#39;&#96;】</span><br><span class="line">#（值异常：浮点类型字符串无法使用int()强制转换）。</span><br><span class="line"></span><br><span class="line">print(int(5.2))</span><br><span class="line">#输出为5</span><br></pre></td></tr></table></figure>
+<h2 id="float-函数"><a href="#float-函数" class="headerlink" title="float()函数"></a>float()函数</h2><p>跟str()和int()函数应用一样，float()函数也是将需要转换的数据放在括号里。</p>
+<h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><p>划重点了：你注意到在条件判断代码中的冒号后，下一行内容的前面，会空几个格，空格的学名叫缩进，在这里空4个空格。<br><img src="./images/3_if%E8%AF%AD%E5%8F%A5%E8%8C%83%E4%BE%8B_1.png"><br>注意：代码的缩进为一个tab键，或者四个空格(tab键和空格不要混用)，格式不对代码就会报错。<br>在if条件语言中，缩进不需要我们手动按空格键。当你用英文输入法打:后按回车，会自动实现下一行代码，向右缩进的功能。<br>冒号是条件判断语句的一个特点，一定不要忘记，Python代码缩进主要是用来明确条件执行的逻辑及先后层级的。<br>if就像是一个小组长，冒号后的内容都是他的成员，当组长if提出一个条件指令时，他下面的成员就要严格照办。<br>直接运行右侧代码。（请不要更改代码，当终端出现红色报错提醒后，点击跳过本题）</p>
+<p>缩进错误：IndentationError: expected an indented block    出现了组织混乱时，if条件和print命令应该是上下级关系，现在成了平行关系。条件和结果失去了内在关系，条件被架空了，自然会报错。</p>
+<p>在双向判断语句里，if…else…是同一层级的，它们都是顶格的，没有缩进，而两个print()是它们的下级。<br>如果else前出现空格，就会出现报错提示【SyntaxError: invalid syntax】（语法错误：无效语法）。<br>正确语法下if和else运行的原理：if和else相当于是两个组长，各自带队，他们的级别是一样的。<br>如果这件事满足if条件就让if去完成，如果不满足就执行else其他条件，互不干扰，分工明确。</p>
+<p>多向判断命令：if…elif…else…用于判断条件达到3个或3个以上。<br>多向判断的命令逻辑：如果if的条件不满足，就按顺序看是否满足elif的条件，如果不满足elif的条件，就执行else的命令。<br>第一行代码为变量赋值，后面的条件会逐个判断一遍，直到满足条件为止。<br><strong>elif语句一定要跟在if之后 ，虽然它们之间是平级的，但有个先来后到</strong> 。elif已经带有其他条件的意思，所以elif后也可以不接else，代码也是完整的。</p>
+<h1 id="input"><a href="#input" class="headerlink" title="input"></a>input</h1><p>从print()函数的信息打印，到input()函数的信息输入，我们就可以实现一个人机互动的小程序了，开始吧。</p>
+<p>input()也可输出信息，只不过这个信息一定要输入才有回应，它是一个等待回应的信息。</p>
+<p>当我们在终端输入选择时，下一步的程序就激活了，可以接着往下运行，input()函数就像一个加油站，加满油（输入信息）就可以接着往下跑了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input(&#39;请输入同班同学的名字：&#39;)</span><br></pre></td></tr></table></figure>
+<p>input()函数输入的是一个等待回复的信息，虽然这个信息也会被输出，但是跟print()函数不同，’请输入同班同学的名字：’它在等待一个答案。</p>
+<p>input()函数会将括号内的信息完全输出，同时在终端区域它还等待你的回答，一般会有个光标在句尾忽隐忽现，就是在等待你的回复。</p>
+<p>如果我们一直不输入信息，它就一直停留在这里，苦苦等待，也不会再有任何反馈。</p>
+<p>input()函数就是代码征途上的加油站，在这里必须要停留，而且要加油（回复信息），代码才能一步步往下跑，如果停留在这里不加油，代码运行就会卡在这里。</p>
+<p>一旦我们输入信息（加油），计算机就收到了回应，带你走向下一段代码。</p>
+<p>input()函数在我们时常接触的网络中随处可见，搜索、输入账号密码、发帖，可以说有输入框就有input()函数的身影，知道它有多重要了吧。</p>
+<p> ====<strong>input()函数是用来收集信息的，并且一定要在终端处输入数据。它是需要被赋值的，input函数输入的值必定为字符串。</strong> #E91E63====</p>
+<h2 id="input-函数结果如何赋值"><a href="#input-函数结果如何赋值" class="headerlink" title="input()函数结果如何赋值"></a>input()函数结果如何赋值</h2><p> 把input()函数收集到的信息保存到一个变量中，这个变量就保存了信息，以后直接打印变量名，就可以得到结果。<br>以下面代码为例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lover &#x3D; input(&#39;请柯南输入喜欢女生的名字：&#39;)</span><br><span class="line"># 运用input()函数收集信息</span><br></pre></td></tr></table></figure>
+<p>当我们输入——小兰，lover = ‘小兰’，我们就完成了从输入到赋值的过程。</p>
+<p><strong>划重点，input()函数输入的信息永远是以字符串的数据形式保存着，也就是说，即使输入的是1整数，但保存下来是’1’这个字符串，要切记。</strong></p>
+<h1 id="报错提示"><a href="#报错提示" class="headerlink" title="报错提示"></a>报错提示</h1><p>【syntaxError:invalid syntax】（语法错误：无效语法）</p>
+<p>一旦出现这种错误提示，你首先就该反思的是：标点符号用对了吗？是英文输入法吗？然后再去检查语法错误。有时找了半天，其实就是一个符号没用英文。</p>
+<p>SyntaxError: unexpected EOF while parsing<br>#语法错误，多了无法解析的符号，检查一下是否多了或者少了括号</p>
+<p>SyntaxError: invalid character in identifier<br>#语法错误有无效标识符，检查一下中文符号</p>
+<p>IndexError: list index out of range<br>#索引错误，超出索引范围，检查一下列表是否为空</p>
+<p>TypeError: must be str, not int<br>#数据类型错误，该数据不是正确的数据类型，比如字符串和数字直接拼接，检查一下数据类型</p>
+<p>IndentationError: expected an indented block<br>#缩进错误，检查一下代码的缩进是否正确</p>
+<p>KeyError:  ‘fond’<br>#键错误，字典中没有该的key对应的值，检查一下键名或者字典数据是否正确</p>
+<p>ValueError: substring not found<br>#值错误，输入的数据类型跟要求的不符合</p>
+<p>NameError: name ‘a’ is not defined<br>#未初始化对象，变量没有被定义</p>
+<p>AttributeError: ‘tuple’ object has no attribute ‘remove’<br>#属性错误，该对象没有这个属性、方法，检查一下数据类型</p>
+<p>SystemExit<br>#解释器请求退出，出现在exit()函数后</p>
+<p>IOError<br>#输入/输出操作失败</p>
+<p>ImportError<br>#导入模块/对象失败，检查一下模块是否能够正常使用</p>
+<p>UnicodeDecodeError/UnicodeEncodeError/UnicodeTranslateError<br>#Unicode 解码/编码/转换/时的错误</p>
+]]></content>
       <categories>
-          
-          <category> 文献管理 </category>
-          
+        <category>编程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> EndNote </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>专业英语</title>
-      <link href="2020/12/07/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/"/>
-      <url>2020/12/07/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/</url>
-      
-        <content type="html"><![CDATA[<h2 id="专业英语词汇翻译"><a href="#专业英语词汇翻译" class="headerlink" title="专业英语词汇翻译"></a>专业英语词汇翻译</h2><p>recrystallization fractions                                          再结晶分数<br>volume fraction                                                         体积分数<br>the mean grain size                                                  平均晶粒尺寸<br>static recrystallization kinetics                                  静态再结晶动力学<br>microstructure evolution                                           微观结构演变<br>macroscopic flow behavior                                       宏观流动行为<br>nuclei                                                                        核<br>nucleation                                                                 形核<br>nucleation model                                                      形核模型<br>nucleation rate                                                         形核速率<br>grain growth                                                             晶粒长大<br>friction stir welding(FSW)                                         搅拌摩擦焊<br>numerical model                                                       数值模拟<br>texture modeling                                                      织构建模<br>texture evolution of the structure                              结构的织构演变<br>the rules of single crystal deformation                      单晶变形原则<br>the lattice rotation of grains                                      晶粒的晶格旋转<br>the morpological texture                                           形态织构<br>topological module                                                   拓扑模块（元胞自动机中的一个模块）<br>grain morphology                                                     晶粒形态<br>mesoscale                                                                中尺度<br>grain boundary misorientation techniques               晶界错位技术<br>hexagonal cells                                                        六角形细胞<br>probabilistic                                                              概率的<br>equiaxd grain morphology                                        等轴晶粒形貌<br>the deformation gradient tensor                               变形梯度张量<br>misorientation angle distribution                               取向差角分布<br>Gleeble                                                                     热模拟实验<br>multi-stage                                                                多阶段<br>multiscale                                                                  多尺度<br>grain topography                                                       晶粒形貌<br>static recrystallization(SRX)                                      静态再结晶<br>metadynamic recrystallization(MDRX)                     亚动态重结晶<br>dynamic recrystallization(DRX)                                动态再结晶<br>corresponding                                                           相应的<br>the second derivative of the third order polynomial         三阶多项式的二阶导数<br>hardening region                                                       加工硬化区<br>critical stress                                                             临界应力<br>regression analysis                                                   回归分析<br>exponent                                                                   指数<br>power law function                                                      幂律函数<br>metallurgical principles                                              冶金原理<br>metallographs                                                            金相图<br>thermodynamic mechanism                                      热力学机制<br>thermomechanical pocessing                                    热机械加工<br>activation energy                                                       活化能<br>curvature-driven mechanism                                     曲率驱动机制<br>uniaxial                                                                      单轴的<br>coordinate system                                                     坐标系<br>incubation period                                                       潜伏期<br>work hardening coefficient                                         加工硬化（WH）指数<br>dynamic recovery coefficient                                     动态回复（DRV）系数<br>grain boundary mobility                                             晶界迁移（GB）速率<br>power function                                                           幂函数<br>segmented MDRX kinetics models                           分段MDRX动力学模型<br>homogenize                                                               均匀化<br>inhomogeneity                                                           非均匀性<br>heterogeneity                                                             异质性、不均匀性<br>isothermal                                                                  等温的<br>non-isothermal                                                          非等温的<br>polycrystalline                                                            多晶的<br>algorithm’s spatial                                                      算法空间<br>temporal scaling                                                         时间尺度<br>versus                                                                         与<br>an oxygen free high conductivity copper                    无氧高导电率（OFHC）铜<br>oscillation                                                                    振荡，波动<br>embedding                                                                  嵌入<br>dendrite growth                                                           枝晶生长<br>directional solidification                                               定向凝固<br>mesoscopic                                                                 介观<br>feasible                                                                        可行的<br>subgrain growth                                                           亚晶粒生长<br>crystal plasticity finite element                                     晶体可塑性有限元<br>nominal strain                                                              标称应变<br>the curvature driven subgrain growth mechanism       曲率驱动的亚晶粒生长机制<br>stress analysis of plane strain tension                         平面拉伸应力分析<br>mathematical statistics theory                                     数学统计理论<br>physical metallurgical principle                                    物理冶金原则<br>the mass transport                                                       传质<br>diffusion                                                                        扩散<br>convection                                                                    对流<br>local - curvature                                                           局部曲率<br>grain coarsening                                                          晶粒粗化<br>exponent                                                                      指数<br>ductile fracture                                                              韧性断裂<br>elevated tempuratures                                                  高温<br>logarithm                                                                       对数<br>executable                                                                     可执行文件<br>config/configuration                                                       配置<br>default values                                                                默认值<br>interpret                                                                         解释<br>Discrete Lattice Window                                               离散晶格窗口<br>Argon atomization                                                         氩气雾化制粉<br>Hot isostatic pressing                                                    HIP，热等静压<br>Hot extrusion                                                                 HEX，热挤压<br>Isothermal forging                                                          ITF，等温锻造<br>Plasma rotating electrode process                                PREP，等离子旋转电极制粉<br>Prior particle boundary                                                   PPB，破碎原始颗粒边界<br>Thermal induced porosity                                              TIP， 闭合热诱导孔洞<br>Non-metallic inclusions                                                  分散非金属夹杂物<br>Tranverse direction                                                        横向<br>Longitudinal direction                                                     纵向<br>particle-stimulated nucleation                                        PSN，粒子激发成核<br>severe plastic deformation                                            SPD，剧烈塑性变形<br>grain crushing                                                                晶粒破碎<br>stroke                                                                             行程<br>stacking-fault-energy                                                     层错能</p><h2 id="专业短语"><a href="#专业短语" class="headerlink" title="专业短语"></a>专业短语</h2><p>to examine the predictions                                       为了检测预测结果<br>be coupled to                                                           耦合在一起为了…….<br>coupling                                                                   结合，耦合<br>A be compared with B                                              将A与B比较<br>be proposed in ….                                                    在……中提出了<br>be capable of….                                                       能够……<br>furthermore                                                              此外<br>A be sensitive to….B                                                对……敏感（A对B敏感）<br>error                                                                         误差<br>quantitatively                                                            定量地<br>facilitate                                                                    促进<br>decrease                                                                  减小<br>increase                                                                   增加<br>deduce                                                                     推断<br>degrade                                                                    降低<br>crucial                                                                       关键的<br>velocity                                                                     高速<br>consequently                                                            从而，因此</p><h2 id="专业句式"><a href="#专业句式" class="headerlink" title="专业句式"></a>专业句式</h2><p>The deformation analysis is first performed to predict the strain, stress, and stored energy distributions within the deformed steel employing the finite element software, ABAQUS.<br>首先使用有限元软件ABAQUS进行变形分析，以预测变形钢中的应变，应力和存储的能量分布。</p><p>The simulated microstructure of the weld zone is compared with the experiment one.<br>将焊接区的模拟微观结构与实验得到的微观结构做对比。</p><p>In the present study, dynamic recrystallization (DRX) of IN718 superalloy was modeled based on the experimental data as well as modified cellular automaton (CA) methods.<br>在本研究中，基于实验数据和改进的细胞自动机（CA）方法对IN718高温合金的动态重结晶（DRX）进行了建模。</p><p>The final properties of the heavy forging products relies apparently on the grain size of the material, so that the grain should be refined and homogenized during forming process through controlling the working parameters during forming process.<br>重型锻造产品的最终性能显然取决于材料的晶粒尺寸，因此应在成形过程中通过控制成形过程中的工作参数来细化晶粒并使晶粒均匀。</p><p>In fact, average grain size, grain morphology, texture and grain boundary properties of the deformed material determine the microstructure characteristics.<br>事实上，变形材料的平均晶粒尺寸、晶粒形态、织构和晶界特性决定了材料的微观结构特征。</p><p>Accordingly, the normal growth, topology deformation, and reconstruction of texture and grain boundary misorientation techniques are used to reconstruct the deformed microstructure.<br>相应地，采用法向生长、拓扑变形、织构重构和晶界错向等技术对变形后的微观结构进行重构。</p><p>Therefore, probabilistic cellular automata method with hexagonal cells is used to create a microstructure with equiaxed grain morphology followed by a new modified topology deformation technique.<br>为此，采用六边形单元概率元胞自动机方法，建立了等轴晶粒形貌的微观结构，并提出了一种新的拓扑变形技术。</p><p>Concerning rod- like δ phase in Inconel 718, Zhang et al. placed ellip- soid particles in the initial microstructure and terms considering particle-stimulated nucleation (PSN) and pinning effect of second-phase particles were added to expressions of nucleation and grain boundary migration.<br>关于Inconel 718中的棒状δ相，Zhang等人在初始微观结构中加入了椭圆颗粒，并在nu-cleation和晶界迁移表达式中加入了考虑颗粒激发成核（PSN）和第二相颗粒钉扎效应的项。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 专业英语 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 专业英语 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>高温合金元胞自动机模拟</title>
-      <link href="2020/12/07/%E9%AB%98%E6%B8%A9%E5%90%88%E9%87%91%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%A8%A1%E6%8B%9F/"/>
-      <url>2020/12/07/%E9%AB%98%E6%B8%A9%E5%90%88%E9%87%91%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%A8%A1%E6%8B%9F/</url>
-      
-        <content type="html"><![CDATA[<h2 id="高温合金"><a href="#高温合金" class="headerlink" title="高温合金"></a>高温合金</h2><p>高温合金是指以铁、镍、钴为基，能在600℃以上的高温及一定应力作用下长期工作的一类金属材料，具有优异的高温强度，良好的抗氧化和抗热腐蚀性能，良好的疲劳性能、断裂韧性等综合性能，又被称为“超合金”，主要应用于航空航天领域和能源领域。</p><p>高温合金变形困难，通常是在高温下加工成零件。在热塑性变形过程通常会发生微观组织演变，例如静态再结晶、晶粒长大以及动态再结晶等过程。</p><p>众所周知，微观组织是影响产品机械性能和使用性能的主要因素。因此如何调控热加工过程中的主要工艺参数，进而控制产品的最终微观组织以及宏观力学性能，这已经成为塑性加工领域广大学者研究的热点问题。</p><h2 id="本构模型"><a href="#本构模型" class="headerlink" title="本构模型"></a>本构模型</h2><p>本构关系是描述金属材料的应力、应变和应变速率等参数之间的关系，研究本构关系对表征材料的力学行为具有重要意义。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 金属学 </category>
-          
-          <category> 有限元 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 高温合金 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>从完全不懂github到搭建个人博客的艰辛历程</title>
-      <link href="2020/12/06/%E4%BB%8E%E5%AE%8C%E5%85%A8%E4%B8%8D%E6%87%82github%E5%88%B0%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%89%B0%E8%BE%9B%E5%8E%86%E7%A8%8B/"/>
-      <url>2020/12/06/%E4%BB%8E%E5%AE%8C%E5%85%A8%E4%B8%8D%E6%87%82github%E5%88%B0%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%89%B0%E8%BE%9B%E5%8E%86%E7%A8%8B/</url>
-      
-        <content type="html"><![CDATA[<h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p>从完全不懂github到搭建个人博客，我前前后后总共用了3天时间，百度了很多教程，发现搭建方法多种多样，跟着教程做总会出现问题，最后我选择了githubpages+hexo搭建博客，主要是跟着这一篇<a href="https://blog.csdn.net/qq_36759224/article/details/82121420?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160713677519721942222262%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=160713677519721942222262&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-82121420.pc_search_result_cache&utm_term=githubpage%20hexo&spm=1018.2118.3001.4449">小白教程</a>搭建的，这一篇讲地比较好的是每一步都告诉你应该在哪个文件夹下git bash，这个是最容易出错的地方。</p><p>这篇小白教程虽然比较详细，但还是有让我出错的地方：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1ZTA5MzBjMi5wbmc" alt="enter description here"><br>这里面的第3步不要做，我做了第3步之后发现我每个步骤与结果都正确，但就是your username.github.io网址上出不来hexo设置好的静态网页，最后我把原来的githubpage删了重新又建了一个，不做第3步又重新配置了一下才搭建好博客。</p><h1 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h1><p>搭建好之后就是选主题了，我选的是next，这个界面比较简洁。具体配置教程CSDN上也有很多，照着做就完事了。<br>可参考<a href="https://blog.csdn.net/steptoboss/article/details/108158067?utm_medium=distribute.pc_relevant.none-task-blog-utm_term-2&spm=1001.2101.3001.4242">NexT主题+个性化配置</a>。</p><h1 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h1><p>搭建博客的最终目的是记录自己的学习笔记，而github pages+hexo最方便的就是发布文章。</p><h2 id="创建新的Markdown文本"><a href="#创建新的Markdown文本" class="headerlink" title="创建新的Markdown文本"></a>创建新的Markdown文本</h2><p>在Hexo的根目录下git bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文章标题</span><br></pre></td></tr></table></figure><p>也可以直接在 \Hexo\source_posts 目录下右键鼠标新建文本文档，改后缀为 .md 即可，这种方法比较方便</p><h2 id="用编辑器写文章"><a href="#用编辑器写文章" class="headerlink" title="用编辑器写文章"></a>用编辑器写文章</h2><p>文章格式如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: 页面布局（配合主题文档使用）</span><br><span class="line">title: 文章名称</span><br><span class="line">date: 文章日期</span><br><span class="line">comments: 文章是否开启评论</span><br><span class="line">photos: 文章封面图（仅部分主题支持）</span><br><span class="line">tags: </span><br><span class="line">  - 文章标签一</span><br><span class="line">  - 文章标签二</span><br><span class="line">categories: 文章分类</span><br><span class="line">description: 文章描述，即要在首页显示的摘要（仅部分主题支持）</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里是摘要</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">这里是正文</span><br><span class="line"></span><br><span class="line">注意：description 和 &lt;!-- more --&gt; 方式显示摘要二选一即可，部分主题不支持description，每个配置英文冒号后面要空一格，不同主题配置有所差异，具体要参考主题文档</span><br></pre></td></tr></table></figure><p>Markdown语法可参考：</p><ul><li><a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a></li><li><a href="https://blog.csdn.net/afei__/article/details/80717153?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160722497319726885890648%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=160722497319726885890648&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-7-80717153.pc_search_result_cache&utm_term=markdown%E8%AF%AD%E6%B3%95&spm=1018.2118.3001.4449">Markdown语法介绍</a></li><li>需要什么功能直接用<a href="https://www.csdn.net/?spm=1010.2135.3001.4476">CSDN</a>搜索即可</li></ul><p>最后用Markdown编辑器（我用的是小书匠，挺好用的）写好文章好直接保存即可。</p><h2 id="将文章推送到服务器上"><a href="#将文章推送到服务器上" class="headerlink" title="将文章推送到服务器上"></a>将文章推送到服务器上</h2><p>可先在本地<a href="http://localhost:4000/">http://localhost:4000/</a>查看效果，在Hexo根目录下git bash运行以下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hero s</span><br></pre></td></tr></table></figure><p>如果本地查看无误后运行以下命令上传至your username.github.io：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>现在访问博客就可以看见自己写好的文章喽！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> github </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> github pages </tag>
-            
-            <tag> hexo </tag>
-            
-            <tag> next </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="2020/12/05/hello-world/"/>
-      <url>2020/12/05/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>
